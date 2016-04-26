@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1><%= title %></h1>
+
+    <a href="/board/write">write</a><br>
+    <table border="1">
+      <tr>
+        <td>no</td>
+        <td>writer</td>
+        <td>title</td>
+        <td>date</td>
+      </tr>
+      <%
+        for(var i=0;i<rows.length;i++){
+          var oneitem=rows[i];
+
+
+
+       %>
+          <tr>
+            <td><%=oneitem.idx%></td>
+            <td><%=oneitem.name%></td>
+            <td><a href="/board/read/<%=oneitem.idx%>"> <%=oneitem.text%></a></td>
+            <td><%=oneitem.date%></td>
+
+          </tr>
+      <%
+      }
+       %>
+    </table>
+
+  </body>
+</html>
